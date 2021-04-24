@@ -21,7 +21,7 @@
     <div class="container">
       <div class="row">
         <div class="col-lg-4 col-sm-12">
-          <form class="card auth_form">
+          <form class="card auth_form" method="POST" action="<?= base_url('Login/proses') ?>">
             <div class="header">
               <img class="logo" src="<?php echo base_url() ?>assets/images/logo.svg" alt="">
               <h5>Log in</h5>
@@ -34,13 +34,14 @@
                 </div>
               </div>
               <div class="input-group mb-3">
-                <input type="text" class="form-control" placeholder="Password" name="password" required>
+                <input type="password" class="form-control" placeholder="Password" name="pass" required>
                 <div class="input-group-append">
-                  <span class="input-group-text"><a href="forgot-password.html" class="forgot" title="Forgot Password"><i class="zmdi zmdi-lock"></i></a></span>
+                  <span class="input-group-text"><a href="#" class="forgot" title="Forgot Password"><i class="zmdi zmdi-lock"></i></a></span>
                 </div>
               </div>
 
-              <a href="index.html" class="btn btn-primary btn-block waves-effect waves-light">SIGN IN</a>
+              <button type="submit" class="btn btn-primary btn-block waves-effect waves-light">SIGN IN</button>
+
 
             </div>
           </form>

@@ -6,19 +6,19 @@
   <meta http-equiv="X-UA-Compatible" content="IE=Edge">
   <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
   <meta name="description" content="Responsive Bootstrap 4 and web Application ui kit.">
-  <title>MSAL LOGIN</title>
-  <link rel="icon" href="favicon.ico" type="image/x-icon"> <!-- Favicon-->
+
+  <title>:: Aero Bootstrap4 Admin :: Jquery DataTables</title>
+  <link rel="icon" href="favicon.ico" type="image/x-icon">
+  <!-- Favicon-->
   <link rel="stylesheet" href="<?php echo base_url() ?>assets/plugins/bootstrap/css/bootstrap.min.css">
-  <link rel="stylesheet" href="<?php echo base_url() ?>assets/plugins/jvectormap/jquery-jvectormap-2.0.3.min.css" />
-  <link rel="stylesheet" href="<?php echo base_url() ?>assets/plugins/charts-c3/plugin.css" />
-
-  <link rel="stylesheet" href="<?php echo base_url() ?>assets/plugins/morrisjs/morris.min.css" />
-
+  <!-- JQuery DataTable Css -->
+  <link rel="stylesheet" href="<?php echo base_url() ?>assets/plugins/jquery-datatable/dataTables.bootstrap4.min.css">
   <!-- Custom Css -->
+  <link rel="stylesheet" href="<?php echo base_url() ?>assets/plugins/bootstrap-select/css/bootstrap-select.css" />
   <link rel="stylesheet" href="<?php echo base_url() ?>assets/css/style.min.css">
 </head>
 
-<body class="theme-blush ls-closed ls-toggle-menu">
+<body class="theme-blush">
 
   <!-- Page Loader -->
   <div class="page-loader-wrapper">
@@ -40,6 +40,224 @@
     </form>
   </div>
 
+  <!-- Right Icon menu Sidebar -->
+  <div class="navbar-right">
+    <ul class="navbar-nav">
+      <button type="submit" class="btn btn-primary rv-btn-toggle"><i class="zmdi zmdi-settings"></i></button>
+      <li><a href="#search" class="main_search" title="Search..."><i class="zmdi zmdi-search"></i></a></li>
+      <li class="dropdown">
+        <a href="javascript:void(0);" class="dropdown-toggle" title="App" data-toggle="dropdown" role="button"><i class="zmdi zmdi-apps"></i></a>
+        <ul class="dropdown-menu slideUp2">
+          <li class="header">App Sortcute</li>
+          <li class="body">
+            <ul class="menu app_sortcut list-unstyled">
+              <li>
+                <a href="image-gallery.html">
+                  <div class="icon-circle mb-2 bg-blue"><i class="zmdi zmdi-camera"></i></div>
+                  <p class="mb-0">Photos</p>
+                </a>
+              </li>
+              <li>
+                <a href="javascript:void(0);">
+                  <div class="icon-circle mb-2 bg-amber"><i class="zmdi zmdi-translate"></i></div>
+                  <p class="mb-0">Translate</p>
+                </a>
+              </li>
+              <li>
+                <a href="events.html">
+                  <div class="icon-circle mb-2 bg-green"><i class="zmdi zmdi-calendar"></i></div>
+                  <p class="mb-0">Calendar</p>
+                </a>
+              </li>
+              <li>
+                <a href="contact.html">
+                  <div class="icon-circle mb-2 bg-purple"><i class="zmdi zmdi-account-calendar"></i></div>
+                  <p class="mb-0">Contacts</p>
+                </a>
+              </li>
+              <li>
+                <a href="javascript:void(0);">
+                  <div class="icon-circle mb-2 bg-red"><i class="zmdi zmdi-tag"></i></div>
+                  <p class="mb-0">News</p>
+                </a>
+              </li>
+              <li>
+                <a href="javascript:void(0);">
+                  <div class="icon-circle mb-2 bg-grey"><i class="zmdi zmdi-map"></i></div>
+                  <p class="mb-0">Maps</p>
+                </a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </li>
+      <li class="dropdown">
+        <a href="javascript:void(0);" class="dropdown-toggle" title="Notifications" data-toggle="dropdown" role="button"><i class="zmdi zmdi-notifications"></i>
+          <div class="notify"><span class="heartbit"></span><span class="point"></span></div>
+        </a>
+        <ul class="dropdown-menu slideUp2">
+          <li class="header">Notifications</li>
+          <li class="body">
+            <ul class="menu list-unstyled">
+              <li>
+                <a href="javascript:void(0);">
+                  <div class="icon-circle bg-blue"><i class="zmdi zmdi-account"></i></div>
+                  <div class="menu-info">
+                    <h4>8 New Members joined</h4>
+                    <p><i class="zmdi zmdi-time"></i> 14 mins ago </p>
+                  </div>
+                </a>
+              </li>
+              <li>
+                <a href="javascript:void(0);">
+                  <div class="icon-circle bg-amber"><i class="zmdi zmdi-shopping-cart"></i></div>
+                  <div class="menu-info">
+                    <h4>4 Sales made</h4>
+                    <p><i class="zmdi zmdi-time"></i> 22 mins ago </p>
+                  </div>
+                </a>
+              </li>
+              <li>
+                <a href="javascript:void(0);">
+                  <div class="icon-circle bg-red"><i class="zmdi zmdi-delete"></i></div>
+                  <div class="menu-info">
+                    <h4><b>Nancy Doe</b> Deleted account</h4>
+                    <p><i class="zmdi zmdi-time"></i> 3 hours ago </p>
+                  </div>
+                </a>
+              </li>
+              <li>
+                <a href="javascript:void(0);">
+                  <div class="icon-circle bg-green"><i class="zmdi zmdi-edit"></i></div>
+                  <div class="menu-info">
+                    <h4><b>Nancy</b> Changed name</h4>
+                    <p><i class="zmdi zmdi-time"></i> 2 hours ago </p>
+                  </div>
+                </a>
+              </li>
+              <li>
+                <a href="javascript:void(0);">
+                  <div class="icon-circle bg-grey"><i class="zmdi zmdi-comment-text"></i></div>
+                  <div class="menu-info">
+                    <h4><b>John</b> Commented your post</h4>
+                    <p><i class="zmdi zmdi-time"></i> 4 hours ago </p>
+                  </div>
+                </a>
+              </li>
+              <li>
+                <a href="javascript:void(0);">
+                  <div class="icon-circle bg-purple"><i class="zmdi zmdi-refresh"></i></div>
+                  <div class="menu-info">
+                    <h4><b>John</b> Updated status</h4>
+                    <p><i class="zmdi zmdi-time"></i> 3 hours ago </p>
+                  </div>
+                </a>
+              </li>
+              <li>
+                <a href="javascript:void(0);">
+                  <div class="icon-circle bg-light-blue"><i class="zmdi zmdi-settings"></i></div>
+                  <div class="menu-info">
+                    <h4>Settings Updated</h4>
+                    <p><i class="zmdi zmdi-time"></i> Yesterday </p>
+                  </div>
+                </a>
+              </li>
+            </ul>
+          </li>
+          <li class="footer"> <a href="javascript:void(0);">View All Notifications</a> </li>
+        </ul>
+      </li>
+      <li class="dropdown">
+        <a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown" role="button"><i class="zmdi zmdi-flag"></i>
+          <div class="notify"><span class="heartbit"></span><span class="point"></span></div>
+        </a>
+        <ul class="dropdown-menu slideUp2">
+          <li class="header">Tasks List <small class="float-right"><a href="javascript:void(0);">View All</a></small></li>
+          <li class="body">
+            <ul class="menu tasks list-unstyled">
+              <li>
+                <div class="progress-container progress-primary">
+                  <span class="progress-badge">eCommerce Website</span>
+                  <div class="progress">
+                    <div class="progress-bar progress-bar-warning" role="progressbar" aria-valuenow="86" aria-valuemin="0" aria-valuemax="100" style="width: 86%;">
+                      <span class="progress-value">86%</span>
+                    </div>
+                  </div>
+                  <ul class="list-unstyled team-info">
+                    <li class="m-r-15"><small>Team</small></li>
+                    <li>
+                      <img src="<?php echo base_url() ?>assets/images/xs/avatar2.jpg" alt="Avatar">
+                    </li>
+                    <li>
+                      <img src="<?php echo base_url() ?>assets/images/xs/avatar3.jpg" alt="Avatar">
+                    </li>
+                    <li>
+                      <img src="<?php echo base_url() ?>assets/images/xs/avatar4.jpg" alt="Avatar">
+                    </li>
+                  </ul>
+                </div>
+              </li>
+              <li>
+                <div class="progress-container">
+                  <span class="progress-badge">iOS Game Dev</span>
+                  <div class="progress">
+                    <div class="progress-bar progress-bar-warning" role="progressbar" aria-valuenow="45" aria-valuemin="0" aria-valuemax="100" style="width: 45%;">
+                      <span class="progress-value">45%</span>
+                    </div>
+                  </div>
+                  <ul class="list-unstyled team-info">
+                    <li class="m-r-15"><small>Team</small></li>
+                    <li>
+                      <img src="<?php echo base_url() ?>assets/images/xs/avatar10.jpg" alt="Avatar">
+                    </li>
+                    <li>
+                      <img src="<?php echo base_url() ?>assets/images/xs/avatar9.jpg" alt="Avatar">
+                    </li>
+                    <li>
+                      <img src="<?php echo base_url() ?>assets/images/xs/avatar8.jpg" alt="Avatar">
+                    </li>
+                    <li>
+                      <img src="<?php echo base_url() ?>assets/images/xs/avatar7.jpg" alt="Avatar">
+                    </li>
+                    <li>
+                      <img src="<?php echo base_url() ?>assets/images/xs/avatar6.jpg" alt="Avatar">
+                    </li>
+                  </ul>
+                </div>
+              </li>
+              <li>
+                <div class="progress-container progress-warning">
+                  <span class="progress-badge">Home Development</span>
+                  <div class="progress">
+                    <div class="progress-bar progress-bar-warning" role="progressbar" aria-valuenow="29" aria-valuemin="0" aria-valuemax="100" style="width: 29%;">
+                      <span class="progress-value">29%</span>
+                    </div>
+                  </div>
+                  <ul class="list-unstyled team-info">
+                    <li class="m-r-15"><small>Team</small></li>
+                    <li>
+                      <img src="<?php echo base_url() ?>assets/images/xs/avatar5.jpg" alt="Avatar">
+                    </li>
+                    <li>
+                      <img src="<?php echo base_url() ?>assets/images/xs/avatar2.jpg" alt="Avatar">
+                    </li>
+                    <li>
+                      <img src="<?php echo base_url() ?>assets/images/xs/avatar7.jpg" alt="Avatar">
+                    </li>
+                  </ul>
+                </div>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </li>
+      <li><a href="javascript:void(0);" class="app_calendar" title="Calendar"><i class="zmdi zmdi-calendar"></i></a></li>
+      <li><a href="javascript:void(0);" class="app_google_drive" title="Google Drive"><i class="zmdi zmdi-google-drive"></i></a></li>
+      <li><a href="javascript:void(0);" class="app_group_work" title="Group Work"><i class="zmdi zmdi-group-work"></i></a></li>
+      <li><a href="javascript:void(0);" class="js-right-sidebar" title="Setting"><i class="zmdi zmdi-settings zmdi-hc-spin"></i></a></li>
+      <li><a href="sign-in.html" class="mega-menu" title="Sign Out"><i class="zmdi zmdi-power"></i></a></li>
+    </ul>
+  </div>
 
 
   <!-- Left Sidebar -->
@@ -59,7 +277,7 @@
             </div>
           </div>
         </li>
-        <li class="active open"><a href="index.html"><i class="zmdi zmdi-home"></i><span>Dashboard</span></a></li>
+        <li><a href="index.html"><i class="zmdi zmdi-home"></i><span>Dashboard</span></a></li>
         <li><a href="my-profile.html"><i class="zmdi zmdi-account"></i><span>Our Profile</span></a></li>
         <li><a href="javascript:void(0);" class="menu-toggle"><i class="zmdi zmdi-apps"></i><span>App</span></a>
           <ul class="ml-menu">
@@ -139,10 +357,10 @@
             <li><a href="form-summernote.html">Summernote</a></li>
           </ul>
         </li>
-        <li><a href="javascript:void(0);" class="menu-toggle"><i class="zmdi zmdi-grid"></i><span>Tables</span></a>
+        <li class="active open"><a href="javascript:void(0);" class="menu-toggle"><i class="zmdi zmdi-grid"></i><span>Tables</span></a>
           <ul class="ml-menu">
             <li><a href="normal-tables.html">Normal Tables</a></li>
-            <li><a href="jquery-datatable.html">Jquery Datatables</a></li>
+            <li class="active"><a href="jquery-datatable.html">Jquery Datatables</a></li>
             <li><a href="editable-table.html">Editable Tables</a></li>
             <li><a href="footable.html">Foo Tables</a></li>
             <li><a href="table-color.html">Tables Color</a></li>
@@ -216,6 +434,8 @@
       </ul>
     </div>
   </aside>
+
+
 
   <!-- Right Sidebar -->
   <aside id="rightsidebar" class="right-sidebar">
@@ -376,40 +596,49 @@
     </div>
   </aside>
 
-  <!-- Main Content -->
+  <!-- Jquery Core Js -->
+  <script src="<?php echo base_url() ?>assets/bundles/libscripts.bundle.js"></script> <!-- Lib Scripts Plugin Js -->
+
 
   <section class="content">
-    <div class="block-header">
-      <div class="row">
-        <div class="col-lg-7 col-md-6 col-sm-12">
-          <h2>Dashboard</h2>
-          <ul class="breadcrumb">
-            <li class="breadcrumb-item"><a href="index.html"><i class="zmdi zmdi-home"></i> Aero</a></li>
-            <li class="breadcrumb-item active">Dashboard 1</li>
-          </ul>
-          <button class="btn btn-primary btn-icon mobile_menu" type="button"><i class="zmdi zmdi-sort-amount-desc"></i></button>
-        </div>
-        <div class="col-lg-5 col-md-6 col-sm-12">
-          <button class="btn btn-primary btn-icon float-right right_icon_toggle_btn" type="button"><i class="zmdi zmdi-arrow-right"></i></button>
+    <div class="body_scroll">
+      <div class="block-header">
+        <div class="row">
+          <div class="col-lg-7 col-md-6 col-sm-12">
+            <h2>Jquery DataTables</h2>
+            <ul class="breadcrumb">
+              <li class="breadcrumb-item"><a href="index.html"><i class="zmdi zmdi-home"></i> Aero</a></li>
+              <li class="breadcrumb-item"><a href="javascript:void(0);">Tables</a></li>
+              <li class="breadcrumb-item active">Normal Tables</li>
+            </ul>
+            <button class="btn btn-primary btn-icon mobile_menu" type="button"><i class="zmdi zmdi-sort-amount-desc"></i></button>
+          </div>
+          <div class="col-lg-5 col-md-6 col-sm-12">
+            <button class="btn btn-primary btn-icon float-right right_icon_toggle_btn" type="button"><i class="zmdi zmdi-arrow-right"></i></button>
+          </div>
         </div>
       </div>
+
+      <?php echo $contents ?>
     </div>
-    <!-- load content menggunakkan library template -->
-    <?php echo $contents ?>
-    <!-- end load template -->
   </section>
 
 
-  <!-- Jquery Core Js -->
-  <script src="<?php echo base_url() ?>assets/bundles/libscripts.bundle.js"></script> <!-- Lib Scripts Plugin Js ( jquery.v3.2.1, Bootstrap4 js) -->
-  <script src="<?php echo base_url() ?>assets/bundles/vendorscripts.bundle.js"></script> <!-- slimscroll, waves Scripts Plugin Js -->
 
-  <script src="<?php echo base_url() ?>assets/bundles/jvectormap.bundle.js"></script> <!-- JVectorMap Plugin Js -->
-  <script src="<?php echo base_url() ?>assets/bundles/sparkline.bundle.js"></script> <!-- Sparkline Plugin Js -->
-  <script src="<?php echo base_url() ?>assets/bundles/c3.bundle.js"></script>
 
-  <script src="<?php echo base_url() ?>assets/bundles/mainscripts.bundle.js"></script>
-  <script src="<?php echo base_url() ?>assets/js/pages/index.js"></script>
+  <script src="<?php echo base_url() ?>assets/bundles/vendorscripts.bundle.js"></script> <!-- Lib Scripts Plugin Js -->
+  <!-- Jquery DataTable Plugin Js -->
+  <script src="<?php echo base_url() ?>assets/bundles/datatablescripts.bundle.js"></script>
+
+  <script src="<?php echo base_url() ?>assets/plugins/jquery-datatable/buttons/dataTables.buttons.min.js"></script>
+  <script src="<?php echo base_url() ?>assets/plugins/jquery-datatable/buttons/buttons.bootstrap4.min.js"></script>
+  <script src="<?php echo base_url() ?>assets/plugins/jquery-datatable/buttons/buttons.colVis.min.js"></script>
+  <script src="<?php echo base_url() ?>assets/plugins/jquery-datatable/buttons/buttons.flash.min.js"></script>
+  <script src="<?php echo base_url() ?>assets/plugins/jquery-datatable/buttons/buttons.html5.min.js"></script>
+  <script src="<?php echo base_url() ?>assets/plugins/jquery-datatable/buttons/buttons.print.min.js"></script>
+
+  <script src="<?php echo base_url() ?>assets/bundles/mainscripts.bundle.js"></script><!-- Custom Js -->
+  <script src="<?php echo base_url() ?>assets/js/pages/tables/jquery-datatable.js"></script>
 </body>
 
 </html>
