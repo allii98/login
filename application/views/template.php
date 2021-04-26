@@ -281,7 +281,7 @@
         <?php if ($this->session->userdata('level') == 1) { ?>
           <li><a href="<?= base_url('Pt') ?>"><i class="zmdi zmdi-balance"></i><span>PT</span></a></li>
           <li><a href="<?= base_url('Dept') ?>"><i class="zmdi zmdi-chart"></i><span>Department</span></a></li>
-          <li><a href="<?= base_url('apk') ?>"><i class="zmdi zmdi-apps"></i><span>Aplikasi</span></a></li>
+          <li><a href="<?= base_url('Apk') ?>"><i class="zmdi zmdi-apps"></i><span>Aplikasi</span></a></li>
           <li><a href="<?= base_url('Users') ?>"><i class="zmdi zmdi-account"></i><span>Users</span></a></li>
           <li><a href="<?= base_url('Users_role') ?>"><i class="zmdi zmdi-swap-alt"></i><span>Users Role</span></a></li>
         <?php } ?>
