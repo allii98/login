@@ -29,7 +29,7 @@ class Login extends CI_Controller
 			if (isset($_POST["remember"])) {
 				$hour = time() + 3600 * 24 * 30;
 				setcookie('username', $username, $hour);
-				setcookie('user_pass', $pass, $hour);
+				setcookie('pass', $pass, $hour);
 			}
 
 			//ambil data dari database

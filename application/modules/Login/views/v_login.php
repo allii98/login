@@ -39,6 +39,10 @@
                   <span class="input-group-text"><a href="#" class="forgot" title="Forgot Password"><i class="zmdi zmdi-lock"></i></a></span>
                 </div>
               </div>
+              <div class="checkbox">
+                <input id="remember_me" name="remember" type="checkbox">
+                <label for="remember_me">Remember Me</label>
+              </div>
 
               <button type="submit" class="btn btn-primary btn-block waves-effect waves-light">SIGN IN</button>
 
