@@ -20,6 +20,7 @@ class Pt extends CI_Controller
 
     public function index()
     {
+        $data['tittle'] = 'Data PT';
         $data['pt'] = $this->M_pt->get_pt();
         $this->template->load('template', 'v_pt', $data);
     }

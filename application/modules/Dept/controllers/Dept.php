@@ -20,6 +20,7 @@ class Dept extends CI_Controller
 
     public function index()
     {
+        $data['tittle'] = 'Data Department';
         $data['dept'] = $this->M_dept->get_dept();
         $this->template->load('template', 'v_dept', $data);
     }
