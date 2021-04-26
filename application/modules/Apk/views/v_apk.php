@@ -12,6 +12,7 @@
                                 <tr>
                                     <th>Nama Aplikasi</th>
                                     <th>Link Aplikasi</th>
+                                    <th>Ctrl Admin</th>
                                     <th>Icon Aplikasi</th>
                                     <th>Is Created</th>
                                     <th>Is Active</th>
@@ -25,6 +26,7 @@
                                     <tr>
                                         <td><?= $a['nama_apk'] ?></td>
                                         <td><?= $a['link_apk'] ?></td>
+                                        <td><?= $a['ctrl_admin'] ?></td>
                                         <td><?= $a['icon_apk'] ?></td>
                                         <td><?= $a['is_created'] ?></td>
                                         <td><?= $a['is_active'] ?></td>
