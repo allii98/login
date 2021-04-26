@@ -54,10 +54,10 @@ class Login extends CI_Controller
 					$this->session->set_userdata('userlogin', $username);
 					$this->session->set_userdata('level', $level);
 
-					if ($level === '1') {
+					if ($level == '1') {
 						redirect('Home');
-					} elseif ($level === '2') {
-						redirect('Tes');
+					} elseif ($level == '2') {
+						redirect('Home');
 					}
 				} else {
 					// Password does not match

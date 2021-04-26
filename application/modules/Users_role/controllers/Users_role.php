@@ -20,6 +20,7 @@ class Users_role extends CI_Controller
 
     public function index()
     {
+        $data['tittle'] = 'Users Role';
         $data['users'] = $this->M_users_role->get_users();
         // $data['apk'] = $this->M_users_role->get_apk();
         $this->template->load('template', 'v_users_role', $data);
