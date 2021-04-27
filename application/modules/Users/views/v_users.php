@@ -67,7 +67,7 @@
                         <div class="col-sm-12">
                             <label for="">Nama</label>
                             <select name="nama" id="nama" class="form-control" required>
-                                <option value="" disabled>- Select Nama - </option>
+                                <option value="" selected disabled>- Select Nama - </option>
                                 <?php foreach ($data_users_ho as $ho) : ?>
                                     <option value="<?= $ho['nama'] ?>"><?= $ho['nama'] ?></option>
                                 <?php endforeach; ?>
@@ -144,22 +144,22 @@
         $('#form_simpan')[0].reset();
     }
 
-    $(document).ready(function() {
+    // $(document).ready(function() {
 
-        // get Edit Product
-        $(document).on('click', '#edit_users', function() {
+    //     // get Edit Product
+    //     $(document).on('click', '#edit_users', function() {
 
-            $('#addModal').modal('show');
+    //         $('#addModal').modal('show');
 
-            var user_nama = $(this).data('user_nama');
-            var username = $(this).data('username');
-            var nama_pt = $(this).data('nama_pt');
-            var nama_dept = $(this).data('nama_dept');
-            var jenis_level = $(this).data('jenis_level');
-            // Set data to Form Edit
-            $('select[name=nama] option').filter(':selected').val(user_nama);
-            $('#username').val(username);
-        });
+    //         var user_nama = $(this).data('user_nama');
+    //         var username = $(this).data('username');
+    //         var nama_pt = $(this).data('nama_pt');
+    //         var nama_dept = $(this).data('nama_dept');
+    //         var jenis_level = $(this).data('jenis_level');
+    //         // Set data to Form Edit
+    //         $('select[name=nama] option').filter(':selected').val(user_nama);
+    //         $('#username').val(username);
+    //     });
 
-    });
+    // });
 </script>
