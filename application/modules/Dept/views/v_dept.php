@@ -10,8 +10,8 @@
                             <thead>
                                 <tr>
                                     <th>No</th>
-                                    <th>Nama Dept</th>
                                     <th>Kode Dept</th>
+                                    <th>Nama Dept</th>
                                     <th>Alias</th>
                                     <th>Logo</th>
                                     <th>Is Created</th>
@@ -25,8 +25,8 @@
                                 ?>
                                     <tr>
                                         <td><?= $no++ ?></td>
-                                        <td><?= $d['nama_dept'] ?></td>
                                         <td><?= $d['kode_dept'] ?></td>
+                                        <td><?= $d['nama_dept'] ?></td>
                                         <td><?= $d['alias'] ?></td>
                                         <td><?= $d['logo'] ?></td>
                                         <td><?= $d['is_created'] ?></td>
