@@ -10,6 +10,8 @@
                             <thead>
                                 <tr>
                                     <th>No</th>
+                                    <th>Aksi</th>
+                                    <th>Kode PT</th>
                                     <th>Nama PT</th>
                                     <th>Alias</th>
                                     <th>Singkatan</th>
@@ -24,7 +26,12 @@
                                 foreach ($pt as $p) {
                                 ?>
                                     <tr>
+                                        <td>
+                                            <button>edit</button>
+                                            <button>delete</button>
+                                        </td>
                                         <td><?= $no++ ?></td>
+                                        <td><?= $p['kode_pt'] ?></td>
                                         <td><?= $p['nama_pt'] ?></td>
                                         <td><?= $p['alias'] ?></td>
                                         <td><?= $p['singkatan'] ?></td>
