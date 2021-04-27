@@ -13,6 +13,21 @@ class M_pt extends CI_Model
             ->get()->result_array();
         return $query;
     }
+
+    public function insertPt($newpt)
+    {
+        $this->db->insert('tb_pt', $newpt);
+    }
+
+    public function updatePt($updatept, $idpt)
+    {
+        return $this->db->update('tb_pt', $updatept, ['id_pt' => $idpt]);
+    }
+
+    public function deletePt($idpt)
+    {
+        return $this->db->delete('tb_pt', ['id_pt' => $idpt]);
+    }
 }
 
 /* End of file ModelName.php */
