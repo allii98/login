@@ -23,6 +23,7 @@ class Users extends CI_Controller
         $data['dept'] = $this->M_users->get_dept();
         $data['level'] = $this->M_users->get_level();
         $data['users'] = $this->M_users->get_users();
+        $data['data_users_ho'] = $this->M_users->get_data_users_ho();
         $data['tittle'] = 'Data Users';
         $this->template->load('template', 'v_users', $data);
     }

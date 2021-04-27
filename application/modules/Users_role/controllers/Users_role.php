@@ -22,7 +22,7 @@ class Users_role extends CI_Controller
     {
         $data['tittle'] = 'Users Role';
         $data['users'] = $this->M_users_role->get_users();
-        // $data['apk'] = $this->M_users_role->get_apk();
+
         $this->template->load('template', 'v_users_role', $data);
     }
 
@@ -39,6 +39,15 @@ class Users_role extends CI_Controller
         $user_id = $this->input->post('user_id');
         $id_apk = $this->input->post('id_apk');
         $output = $this->M_users_role->cek_role($user_id, $id_apk);
+
+        echo json_encode($output);
+    }
+
+    public function ubah_role()
+    {
+        $id_apk = $this->input->post('id_apk');
+        $user_id = $this->input->post('user_id');
+        $output = $this->M_users_role->ubah_role($id_apk, $user_id);
 
         echo json_encode($output);
     }

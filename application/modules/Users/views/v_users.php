@@ -10,6 +10,8 @@
                         <table class="table table-bordered table-striped table-hover dataTable js-exportable">
                             <thead>
                                 <tr>
+                                    <th style="width: 12%;">Aksi</th>
+                                    <th>No</th>
                                     <th>Nama</th>
                                     <th>Username</th>
                                     <th>PT</th>
@@ -25,13 +27,20 @@
                                 foreach ($users as $u) {
                                 ?>
                                     <tr>
+                                        <td>
+                                            <div class="row ml-0">
+                                                <button class="btn btn-sm btn-warning zmdi zmdi-edit" id="edit_users" data-user_nama='<?= $u['user_nama'] ?>' data-username='<?= $u['username'] ?>' data-nama_pt='<?= $u['nama_pt'] ?>' data-nama_dept='<?= $u['nama_dept'] ?>' data-jenis_level='<?= $u['jenis_level'] ?>'></button>
+                                                <button class=" btn btn-sm btn-danger zmdi zmdi-delete ml-1"></button>
+                                            </div>
+                                        </td>
+                                        <td><?= $no++ ?></td>
                                         <td><?= $u['user_nama'] ?></td>
                                         <td><?= $u['username'] ?></td>
-                                        <td><?= $u['id_pt'] ?></td>
-                                        <td><?= $u['id_dept'] ?></td>
-                                        <td><?= $u['level'] ?></td>
+                                        <td><?= $u['nama_pt'] ?></td>
+                                        <td><?= $u['nama_dept'] ?></td>
+                                        <td><?= $u['jenis_level'] ?></td>
                                         <td><?= $u['is_created'] ?></td>
-                                        <td><?= $u['is_active'] ?></td>
+                                        <td><button class="badge badge-success">Aktif</button></td>
                                     </tr>
                                 <?php
                                 }
@@ -53,13 +62,16 @@
                 <h4 class="title" id="defaultModalLabel">Tambah Users</h4>
             </div>
             <div class="modal-body">
-                <form action="<?= base_url('Users/addUsers') ?>" method="POST">
+                <form action="<?= base_url('Users/addUsers') ?>" id="form_simpan" method="POST">
                     <div class="row clearfix">
                         <div class="col-sm-12">
                             <label for="">Nama</label>
-                            <div class="form-group">
-                                <input type="text" name="nama" class="form-control" placeholder="Nama" required />
-                            </div>
+                            <select name="nama" id="nama" class="form-control" required>
+                                <option value="" disabled>- Select Nama - </option>
+                                <?php foreach ($data_users_ho as $ho) : ?>
+                                    <option value="<?= $ho['nama'] ?>"><?= $ho['nama'] ?></option>
+                                <?php endforeach; ?>
+                            </select>
                         </div>
                     </div>
                     <div class="row clearfix mb-1">
@@ -86,7 +98,7 @@
                         <div class="col-sm-12">
                             <label for="">Username</label>
                             <div class="form-group">
-                                <input type="text" name="username" class="form-control" placeholder="Username" required />
+                                <input type="text" name="username" id="username" class="form-control" placeholder="Username" required />
                             </div>
                         </div>
                     </div>
@@ -129,5 +141,25 @@
 <script>
     function add() {
         $('#addModal').modal('show');
+        $('#form_simpan')[0].reset();
     }
+
+    $(document).ready(function() {
+
+        // get Edit Product
+        $(document).on('click', '#edit_users', function() {
+
+            $('#addModal').modal('show');
+
+            var user_nama = $(this).data('user_nama');
+            var username = $(this).data('username');
+            var nama_pt = $(this).data('nama_pt');
+            var nama_dept = $(this).data('nama_dept');
+            var jenis_level = $(this).data('jenis_level');
+            // Set data to Form Edit
+            $('select[name=nama] option').filter(':selected').val(user_nama);
+            $('#username').val(username);
+        });
+
+    });
 </script>

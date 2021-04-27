@@ -7,10 +7,22 @@ class M_users extends CI_Model
 
     public function get_users()
     {
-        $query = $this->db->select('*')
+        $query = $this->db->select('tbuser.user_id,tbuser.user_nama, tbuser.username, tb_pt.nama_pt, tb_dept.nama_dept, tb_level.jenis_level, tbuser.is_created')
             ->from('tbuser')
-            ->where('is_active', 1)
+            ->join('tb_pt', 'tb_pt.id_pt = tbuser.id_pt')
+            ->join('tb_dept', 'tb_dept.id_dept = tbuser.id_dept')
+            ->join('tb_level', 'tb_level.kode_level = tbuser.level')
+            ->where('tbuser.is_active', 1)
             ->order_by('user_id', 'DESC')
+            ->get()->result_array();
+        return $query;
+    }
+
+    public function get_data_users_ho()
+    {
+        $query = $this->db->select('nama')
+            ->from('user_ho')
+            ->order_by('nama', 'ASC')
             ->get()->result_array();
         return $query;
     }

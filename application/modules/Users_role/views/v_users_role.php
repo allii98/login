@@ -9,6 +9,7 @@
                         <table class="table table-bordered table-striped table-hover js-basic-example dataTable">
                             <thead>
                                 <tr>
+                                    <th>No</th>
                                     <th>Nama</th>
                                     <th>Username</th>
                                     <th>PT</th>
@@ -23,12 +24,13 @@
                                 foreach ($users as $u) {
                                 ?>
                                     <tr>
+                                        <td><?= $no++ ?></td>
                                         <td><?= $u['user_nama'] ?></td>
                                         <td><?= $u['username'] ?></td>
-                                        <td><?= $u['id_pt'] ?></td>
-                                        <td><?= $u['id_dept'] ?></td>
-                                        <td><?= $u['level'] ?></td>
-                                        <td><button class="btn btn-info" onclick="apk(<?= $u['user_id'] ?>)">Akses Aplikasi</button></td>
+                                        <td><?= $u['nama_pt'] ?></td>
+                                        <td><?= $u['nama_dept'] ?></td>
+                                        <td><?= $u['jenis_level'] ?></td>
+                                        <td><button class="btn btn-info btn-xs" onclick="apk(<?= $u['user_id'] ?>)">Akses&nbsp;Aplikasi</button></td>
                                     </tr>
                                 <?php
                                 }
@@ -85,7 +87,6 @@
 
 <script>
     function apk(user_id) {
-        console.log(user_id);
 
         $('#roleModal').modal('show');
         $('#role_apk').empty();
@@ -105,10 +106,11 @@
 
                     var tr_buka = '<tr id="tr">';
                     var td_1 = '<td>' +
-                        '<font face="Verdana" size="2">' + data[i].nama_apk + '</font>' +
+                        "<span id='nama_apk_" + i + "'>" + data[i].nama_apk + "</span>" +
+                        "<input type='hidden' id='id_apk_" + i + "' value='" + data[i].id_apk + "'></input>" +
                         '</td>';
                     var td_2 = '<td>' +
-                        "<input id='cb_akses_" + i + "' type='checkbox'>" +
+                        "<input id='cb_akses_" + i + "' type='checkbox' onclick='ubahRole(" + i + ',' + user_id + ")'>" +
                         '</td>';
                     var tr_tutup = '</tr>';
                     $('#role_apk').append(tr_buka + td_1 + td_2 + tr_tutup);
@@ -134,6 +136,32 @@
                 if (data != null) {
                     $('#cb_akses_' + i).attr('checked', '');
                 }
+            }
+
+        });
+    }
+
+    function ubahRole(i, user_id) {
+
+        var id_apk = $('#id_apk_' + i).val();
+
+        // console.log(id_apk);
+        // console.log(user_id);
+        $.ajax({
+            type: "POST",
+            url: "<?php echo site_url('Users_role/ubah_role'); ?>",
+            dataType: "JSON",
+
+            data: {
+                'id_apk': id_apk,
+                'user_id': user_id
+            },
+            success: function(data) {
+
+                console.log(data);
+                // if (data != null) {
+                //     $('#cb_akses_' + i).attr('checked', '');
+                // }
             }
 
         });
