@@ -15,6 +15,8 @@ class Users extends CI_Controller
             $this->session->set_flashdata('pesan', $pemberitahuan);
             redirect('Login');
         }
+
+        date_default_timezone_set("Asia/Bangkok");
     }
 
     public function index()
@@ -23,6 +25,9 @@ class Users extends CI_Controller
         $data['dept'] = $this->M_users->get_dept();
         $data['level'] = $this->M_users->get_level();
         $data['users'] = $this->M_users->get_users();
+
+        $data['users_modal'] = $this->db->query("SELECT * FROM tbuser")->result_array();
+
         $data['data_users_ho'] = $this->M_users->get_data_users_ho();
         $data['tittle'] = 'Data Users';
         $this->template->load('template', 'v_users', $data);
@@ -37,12 +42,29 @@ class Users extends CI_Controller
             'username' => $this->input->post('username'),
             'user_pass' => password_hash($this->input->post('password'), PASSWORD_DEFAULT),
             'level' => $this->input->post('level'),
-            'is_created' => date('Y-m-d'),
+            'is_created' => date('Y-m-d H:i:s'),
             'is_active' => $this->input->post('is_active')
         ];
 
         $this->M_users->saveUsers($data);
         $this->session->set_flashdata('message', '<div class="alert alert-success" role="alert">User has been created successfully!</div>');
+        redirect('Users');
+    }
+
+    public function editUsers()
+    {
+        $idUsers = $this->input->post('id_users');
+        $updateusers = [
+            'user_nama' => $this->input->post('nama'),
+            'id_pt' => $this->input->post('id_pt'),
+            'id_dept' => $this->input->post('id_dept'),
+            'username' => $this->input->post('username'),
+            'user_pass' => $this->input->post('password'),
+            'level' => $this->input->post('level'),
+        ];
+
+        $this->M_users->updateUsers($updateusers, $idUsers);
+        $this->session->set_flashdata('message', '<div class="alert alert-info" role="alert">User has been updated successfully!</div>');
         redirect('Users');
     }
 }

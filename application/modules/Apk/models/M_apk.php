@@ -1,8 +1,9 @@
-<?php 
+<?php
 
-defined('BASEPATH') OR exit('No direct script access allowed');
+defined('BASEPATH') or exit('No direct script access allowed');
 
-class M_apk extends CI_Model {
+class M_apk extends CI_Model
+{
 
     public function get_apk()
     {
@@ -14,6 +15,20 @@ class M_apk extends CI_Model {
         return $query;
     }
 
+    public function insertapk($newapk)
+    {
+        $this->db->insert('tb_aplikasi', $newapk);
+    }
+
+    public function updateApk($updateapk, $idapk)
+    {
+        return $this->db->update('tb_aplikasi', $updateapk, ['id_apk' => $idapk]);
+    }
+
+    public function deleteApk($idapk)
+    {
+        return $this->db->delete('tb_aplikasi', ['id_apk' => $idapk]);
+    }
 }
 
 /* End of file M_apk.php */

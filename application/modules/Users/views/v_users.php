@@ -29,7 +29,8 @@
                                     <tr>
                                         <td>
                                             <div class="row ml-0">
-                                                <button class="btn btn-sm btn-warning zmdi zmdi-edit" id="edit_users" data-user_nama='<?= $u['user_nama'] ?>' data-username='<?= $u['username'] ?>' data-nama_pt='<?= $u['nama_pt'] ?>' data-nama_dept='<?= $u['nama_dept'] ?>' data-jenis_level='<?= $u['jenis_level'] ?>'></button>
+                                                <!-- <button class="btn btn-sm btn-warning zmdi zmdi-edit" id="edit_users" data-id="<?= $u['user_id'] ?>" data-user_nama='<?= $u['user_nama'] ?>' data-username='<?= $u['username'] ?>' data-id_pt='<?= $u['id_pt'] ?>' data-nama_pt='<?= $u['nama_pt'] ?>' data-nama_dept='<?= $u['nama_dept'] ?>' data-jenis_level='<?= $u['jenis_level'] ?>' data-toggle="modal" data-target="#editModalUsers"></button> -->
+                                                <button class="btn btn-sm btn-warning zmdi zmdi-edit" data-toggle="modal" data-target="#editModalUsers<?= $u['user_id'] ?>"></button>
                                                 <button class=" btn btn-sm btn-danger zmdi zmdi-delete ml-1"></button>
                                             </div>
                                         </td>
@@ -137,6 +138,93 @@
         </div>
     </div>
 </div>
+
+<?php $no = 0 ?>
+<?php foreach ($users as $u) : $no++; ?>
+    <div class="modal fade" id="editModalUsers<?= $u['user_id'] ?>" tabindex="-1" role="dialog">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="title" id="defaultModalLabel">Edit Users</h4>
+                </div>
+                <div class="modal-body">
+                    <form action="<?= base_url('Users/editUsers') ?>" id="form_simpan" method="POST">
+                        <div class="row clearfix">
+                            <input type="text" id="id_users" name="id_users" value="<?= $u['user_id'] ?>" class="form-control" />
+                            <div class="col-sm-12">
+                                <label for="">Nama</label>
+                                <select name="nama" id="selection" class="form-control" required>
+                                    <option value="<?= $u['user_nama'] ?>" selected><?= $u['user_nama'] ?></option>
+                                    <?php foreach ($data_users_ho as $ho) : ?>
+                                        <option value="<?= $ho['nama'] ?>"><?= $ho['nama'] ?></option>
+                                    <?php endforeach; ?>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="row clearfix mb-1">
+                            <div class="col-sm-6">
+                                <label for="">PT</label>
+                                <select name="id_pt" id="id_pt" class="form-control" required>
+                                    <option value="<?= $u['id_pt'] ?>"><?= $u['alias'] ?></option>
+                                    <?php foreach ($pt as $p) : ?>
+                                        <option value="<?= $u['id_pt'] ?>"><?= $p['alias'] ?></option>
+                                    <?php endforeach; ?>
+                                </select>
+                            </div>
+                            <div class="col-sm-6">
+                                <label for="">Departement</label>
+                                <select name="id_dept" class="form-control" required>
+                                    <option value="<?= $u['id_dept'] ?>" selected><?= $u['nama_dept'] ?></option>
+                                    <?php foreach ($dept as $d) : ?>
+                                        <option value="<?= $d['id_dept'] ?>"><?= $d['nama_dept'] ?></option>
+                                    <?php endforeach; ?>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="row clearfix">
+                            <div class="col-sm-12">
+                                <label for="">Username</label>
+                                <div class="form-group">
+                                    <input type="text" name="username" id="username" class="form-control" placeholder="Username" value="<?= $u['username'] ?>" />
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row clearfix">
+                            <div class="col-sm-12">
+                                <label for="">Password</label>
+                                <div class="form-group">
+                                    <input type="password" name="password" class="form-control" placeholder="Password" required />
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row clearfix">
+                            <div class="col-sm-6">
+                                <label for="">Level</label>
+                                <select name="level" class="form-control" required>
+                                    <option value="<?= $u['level'] ?>" selected><?= $u['jenis_level'] ?></option>
+                                    <?php foreach ($level as $l) : ?>
+                                        <option value="<?= $l['kode_level'] ?>"><?= $l['jenis_level'] ?></option>
+                                    <?php endforeach; ?>
+                                </select>
+                            </div>
+                            <div class="col-sm-6">
+                                <label for="">Is Active</label>
+                                <select name="is_active" class="form-control" required>
+                                    <option value="1" selected>Y</option>
+                                    <option value="0">N</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="row modal-footer">
+                            <button type="button" class="btn btn-danger waves-effect" data-dismiss="modal">CLOSE</button>
+                            <button type="submit" class="btn btn-primary btn-round waves-effect">SAVE CHANGES</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+<?php endforeach; ?>
 
 <script>
     function add() {

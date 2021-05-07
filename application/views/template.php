@@ -264,7 +264,7 @@
   <aside id="leftsidebar" class="sidebar">
     <div class="navbar-brand">
       <button class="btn-menu ls-toggle-btn" type="button"><i class="zmdi zmdi-menu"></i></button>
-      <a href="index.html"><img src="<?php echo base_url() ?>assets/images/logo.svg" width="25" alt="Aero"><span class="m-l-10">Aero</span></a>
+      <a href="index.html"><img src="<?php echo base_url() ?>assets/images/logo_msal_transparat.gif" width="25" alt="Aero"><span class="m-l-10">Login MSAL</span></a>
     </div>
     <div class="menu">
       <ul class="list">

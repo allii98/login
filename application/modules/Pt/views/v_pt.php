@@ -10,8 +10,8 @@
                         <table class="table table-bordered table-striped table-hover js-basic-example dataTable">
                             <thead>
                                 <tr>
-                                    <th>No</th>
                                     <th>Aksi</th>
+                                    <th>No</th>
                                     <th>Kode PT</th>
                                     <th>Nama PT</th>
                                     <th>Alias</th>
@@ -28,8 +28,10 @@
                                 ?>
                                     <tr>
                                         <td>
-                                            <a id="editpt" href="javascript:;" data-id="<?php echo $p['id_pt'] ?>" data-nama_pt="<?php echo $p['nama_pt'] ?>" data-kode_pt="<?php echo $p['kode_pt'] ?>" data-alias="<?php echo $p['alias'] ?>" data-singkatan="<?php echo $p['singkatan'] ?>" data-deskripsi="<?php echo $p['deskripsi'] ?>" data-toggle="modal" data-target="#editModalPt" class="btn btn-sm btn-primary">edit</a>
-                                            <a onclick="deleteConfirm('<?= base_url('Pt/deletePt/' . $p['id_pt']) ?>')" href="#!" class=" btn btn-sm btn-danger">delete</a>
+                                            <div class="row px-2">
+                                                <button id="editpt" href="javascript:;" data-id="<?php echo $p['id_pt'] ?>" data-nama_pt="<?php echo $p['nama_pt'] ?>" data-kode_pt="<?php echo $p['kode_pt'] ?>" data-alias="<?php echo $p['alias'] ?>" data-singkatan="<?php echo $p['singkatan'] ?>" data-deskripsi="<?php echo $p['deskripsi'] ?>" data-toggle="modal" data-target="#editModalPt" class="btn btn-sm btn-warning zmdi zmdi-edit"></button>
+                                                <button onclick="deleteConfirm('<?= base_url('Pt/deletePt/' . $p['id_pt']) ?>')" href="#!" class="btn btn-sm btn-danger zmdi zmdi-delete"></button>
+                                            </div>
                                         </td>
                                         <td><?= $no++ ?></td>
                                         <td><?= $p['kode_pt'] ?></td>

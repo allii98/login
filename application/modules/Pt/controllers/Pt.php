@@ -34,9 +34,9 @@ class Pt extends CI_Controller
             'alias' => $this->input->post('alias'),
             'singkatan' => $this->input->post('singkatan'),
             // 'logo' => $this->input->post('logo'),
-            'deskripsi' => $this->input->post('deskripsi'),
-            'is_active' => $this->input->post('is_active'),
+            // 'deskripsi' => $this->input->post('deskripsi'),
             'is_created' => date('Y-m-d'),
+            'is_active' => $this->input->post('is_active'),
         ];
 
         $this->M_pt->insertPt($newpt);
