@@ -3,7 +3,7 @@
   <div class="row clearfix">
     <?php if ($this->session->userdata('level') == 1) { ?>
 
-      <?php foreach ($apk as $dt) : ?>
+      <?php foreach ($apkadmin as $dt) : ?>
         <div class="col-lg-3 col-md-6 col-sm-12">
           <div class="card widget_2 big_icon <?= $dt['icon_apk'] ?>">
             <div class="body">
@@ -15,6 +15,19 @@
         </div>
       <?php endforeach; ?>
 
+    <?php } else { ?>
+
+      <?php foreach ($apk as $au) : ?>
+        <div class="col-lg-3 col-md-6 col-sm-12">
+          <div class="card widget_2 big_icon <?= $au['icon_apk'] ?>">
+            <div class="body">
+              <!-- <h6></h6> -->
+              <a href="<?= $au['link_apk'] ?>" class="btn btn-neutral waves-effect"><?= $au['nama_apk'] ?></a>
+
+            </div>
+          </div>
+        </div>
+      <?php endforeach; ?>
     <?php } ?>
 
   </div>

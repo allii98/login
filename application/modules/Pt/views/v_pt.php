@@ -116,8 +116,8 @@
                         </div>
                     </div>
                     <div class="row modal-footer">
-                        <button type="button" class="btn btn-danger waves-effect" data-dismiss="modal">CLOSE</button>
-                        <button type="submit" class="btn btn-primary btn-round waves-effect">SAVE CHANGES</button>
+                        <button type="button" class="btn btn-danger btn-round waves-effect" data-dismiss="modal">Close</button>
+                        <button type="submit" class="btn btn-primary btn-round waves-effect">Save</button>
                     </div>
                 </form>
             </div>
@@ -186,8 +186,8 @@
                         </div>
                     </div>
                     <div class="row modal-footer">
-                        <button type="button" class="btn btn-danger waves-effect" data-dismiss="modal">CLOSE</button>
-                        <button type="submit" class="btn btn-primary btn-round waves-effect">SAVE CHANGES</button>
+                        <button type="button" class="btn btn-danger btn-round waves-effect" data-dismiss="modal">Close</button>
+                        <button type="submit" class="btn btn-primary btn-round waves-effect">Save Changes</button>
                     </div>
                 </form>
             </div>

@@ -18,10 +18,17 @@ class Home extends CI_Controller
 
     public function index()
     {
+        $session = $this->session->userdata('userlogin');
+        $sql = "SELECT * FROM tbuser WHERE username = '$session'";
+        $row_user = $this->db->query($sql)->row_array();
+        $id_user = $row_user['user_id'];
+
         $data = [
             'tittle'          => 'Dashboard',
-            'apk' => $this->Home_m->get_apk()
+            'apkadmin' => $this->Home_m->get_apk(),
+            'apk' => $this->Home_m->access_apk($id_user),
         ];
+        // var_dump($data['apk']);
         $this->template->load('template', 'dashboard', $data);
         // $this->load->view('template', $data, FALSE);
     }

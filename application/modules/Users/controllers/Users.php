@@ -16,7 +16,7 @@ class Users extends CI_Controller
             redirect('Login');
         }
 
-        date_default_timezone_set("Asia/Bangkok");
+        date_default_timezone_set("Asia/Jakarta");
     }
 
     public function index()
@@ -53,18 +53,28 @@ class Users extends CI_Controller
 
     public function editUsers()
     {
+        // $pw = password_hash($this->input->post('passworddef'), PASSWORD_DEFAULT);
+        // var_dump($pw);
         $idUsers = $this->input->post('id_users');
         $updateusers = [
             'user_nama' => $this->input->post('nama'),
             'id_pt' => $this->input->post('id_pt'),
             'id_dept' => $this->input->post('id_dept'),
             'username' => $this->input->post('username'),
-            'user_pass' => $this->input->post('password'),
+            'user_pass' => password_hash($this->input->post('passworddef'), PASSWORD_DEFAULT),
             'level' => $this->input->post('level'),
+            'is_active' => $this->input->post('is_active'),
         ];
 
         $this->M_users->updateUsers($updateusers, $idUsers);
         $this->session->set_flashdata('message', '<div class="alert alert-info" role="alert">User has been updated successfully!</div>');
+        redirect('Users');
+    }
+
+    public function deleteUsers($idusers)
+    {
+        $this->M_users->deleteUsers($idusers);
+        $this->session->set_flashdata('message', '<div class="alert alert-danger" role="alert">User has been deleted successfully!</div>');
         redirect('Users');
     }
 }

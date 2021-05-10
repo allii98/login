@@ -272,8 +272,14 @@
           <div class="user-info">
             <a class="image" href="profile.html"><img src="<?php echo base_url() ?>assets/images/profile_av.jpg" alt="User"></a>
             <div class="detail">
-              <h4>Michael</h4>
-              <small>Super Admin</small>
+              <h4><?= ucfirst($this->session->userdata('userlogin')) ?></h4>
+              <?php if ($this->session->userdata('level') == 1) { ?>
+                <small>Admin</small>
+              <?php } else if ($this->session->userdata('level') == 2) { ?>
+                <small>User</small>
+              <?php } else { ?>
+                <small>Super Admin</small>
+              <?php } ?>
             </div>
           </div>
         </li>

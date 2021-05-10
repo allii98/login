@@ -7,7 +7,7 @@ class M_users extends CI_Model
 
     public function get_users()
     {
-        $query = $this->db->select('tbuser.user_id,tbuser.user_nama, tbuser.id_pt, tbuser.username, tbuser.level, tb_pt.nama_pt, tb_pt.alias, tb_dept.nama_dept, tb_dept.id_dept, tb_level.jenis_level, tbuser.is_created')
+        $query = $this->db->select('tbuser.user_id,tbuser.user_nama, tbuser.id_pt, tbuser.username, tbuser.level, tbuser.is_active, tb_pt.nama_pt, tb_pt.alias, tb_dept.nama_dept, tb_dept.id_dept, tb_level.jenis_level, tbuser.is_created')
             ->from('tbuser')
             ->join('tb_pt', 'tb_pt.id_pt = tbuser.id_pt')
             ->join('tb_dept', 'tb_dept.id_dept = tbuser.id_dept')
@@ -65,6 +65,11 @@ class M_users extends CI_Model
     public function updateUsers($updateusers, $idUsers)
     {
         return $this->db->update('tbuser', $updateusers, ['user_id' => $idUsers]);
+    }
+
+    public function deleteUsers($idUsers)
+    {
+        return $this->db->delete('tbuser', ['user_id' => $idUsers]);
     }
 }
 
