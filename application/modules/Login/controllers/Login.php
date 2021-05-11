@@ -55,9 +55,11 @@ class Login extends CI_Controller
 					$this->session->set_userdata('level', $level);
 
 					if ($level == '1') {
-						redirect('Home');
+						redirect('home');
 					} elseif ($level == '2') {
-						redirect('Home');
+						redirect('http://mips.msalgroup.com:8181/mips/');
+					} elseif ($level == '3') {
+						redirect('http://mips.msalgroup.com:8181/mips/');
 					}
 				} else {
 					// Password does not match
