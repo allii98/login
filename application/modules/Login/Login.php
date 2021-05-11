@@ -46,7 +46,6 @@ class Login extends CI_Controller
 				foreach ($data as $dkey) {
 					$passDB = $dkey->user_pass;
 					$level = $dkey->level;
-					$user_nama = $dkey->user_nama;
 					// $avatar = $dkey->foto;
 					//$idusr = $dkey->id;
 				}
@@ -54,7 +53,6 @@ class Login extends CI_Controller
 					// Password match
 					$this->session->set_userdata('userlogin', $username);
 					$this->session->set_userdata('level', $level);
-					$this->session->set_userdata('user_nama', $user_nama);
 
 					if ($level == '1') {
 						redirect('home');
