@@ -46,7 +46,6 @@ class Login extends CI_Controller
 				foreach ($data as $dkey) {
 					$passDB = $dkey->user_pass;
 					$level = $dkey->level;
-					$user_nama = $dkey->user_nama;
 					// $avatar = $dkey->foto;
 					//$idusr = $dkey->id;
 				}
@@ -54,14 +53,11 @@ class Login extends CI_Controller
 					// Password match
 					$this->session->set_userdata('userlogin', $username);
 					$this->session->set_userdata('level', $level);
-					$this->session->set_userdata('user_nama', $user_nama);
 
 					if ($level == '1') {
-						redirect('home');
+						redirect('Home');
 					} elseif ($level == '2') {
-						redirect('http://mips.msalgroup.com:8181/mips/');
-					} elseif ($level == '3') {
-						redirect('http://mips.msalgroup.com:8181/mips/');
+						redirect('Home');
 					}
 				} else {
 					// Password does not match
